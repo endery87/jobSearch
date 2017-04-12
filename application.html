@@ -1,0 +1,43 @@
+<div class="container" style="padding:30px">
+	<!--Vacancy information-->
+	<h1>Job Application for "<i>{{ctrl.myArray[ctrl.selected].name}}</i>"</h1>
+	<h5>Company:<i>{{ctrl.myArray[ctrl.selected].company}}</i><h5>
+	<h5>Location:<i>{{ctrl.myArray[ctrl.selected].location}}</i><h5>
+	<form>
+		<div class="form-group">
+			<!--applicaiton form with fixed fields
+				random questions have not been added yet-->
+			<label for="usn">Email:</label>
+			<input type="email" class="form-control" ng-model="ctrl.username" name="u_name" id="usn">
+			<label for="name">Name:</label>
+			<input type="text" class="form-control" ng-model="ctrl.password" name="p_word" id="psw">
+
+			<label class="checkbox">Work Permit</label><input type="checkbox" value="">
+			<br>
+		
+			<label for="exp">Experience</label>
+			<input type="number" class="form-control"></input>
+
+			<label for="eng">English</label>
+			<form id="eng" class="form-control">
+				<div class="radio">
+					<label><input type="radio" name="optradio">Basic</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="optradio">Intermediate</label>
+				</div>
+				<div class="radio">
+					<label><input type="radio" name="optradio">Fluent</label>
+				</div>
+			</form>
+			<br>
+
+			<label for="txt">About yourself:</label>
+			<textarea id="txt" class="form-control" rows="4" cols="50">
+				</textarea>
+			<button class="btn btn-primary" type="submit" ng-click="ctrl.submit()">Submit</button>
+			<button class="btn btn-danger" ng-click="ctrl.cancel()">Cancel</button>
+
+		</div>
+	</form>
+</div>

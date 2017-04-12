@@ -1,0 +1,43 @@
+<div class="table-responsive"> 
+    <table class="table table-striped"> <!--table for vacancies -->
+        <!--sort and filter have not been implemented yet-->
+        <tr>
+            <th>Title
+                <span ng-click="ctrl.sort('title','DESC')" class="glyphicon glyphicon-triangle-bottom"></span>
+                <span ng-click="ctrl.sort('title','ASC')" class="glyphicon glyphicon-triangle-top"></span>
+                <br><input type="text" ng-model="ctrl.titleFilter" ng-change="ctrl.filter()" style="height:20px; width:80px"></input>
+            </th>
+            <th>Company
+                <span ng-click="ctrl.sort('company','DESC')" class="glyphicon glyphicon-triangle-bottom"></span>
+                <span ng-click="ctrl.sort('company','ASC')" class="glyphicon glyphicon-triangle-top"></span>
+                <br><input type="text" ng-model="ctrl.companyFilter" ng-change="ctrl.filter()" style="height:20px; width:80px"></input>
+            </th>
+            <th>Location
+                <span ng-click="ctrl.sort('location','DESC')" class="glyphicon glyphicon-triangle-bottom"></span>
+                <span ng-click="ctrl.sort('location','ASC')" class="glyphicon glyphicon-triangle-top"></span>
+                <br><input type="text" ng-model="ctrl.locationFilter" ng-change="ctrl.filter()" style="height:20px; width:80px"></input>
+            </th>
+            <th>
+                <th>
+        </tr>
+        <!--vacancies-->
+        <tr ng-repeat="i in ctrl.myArray track by $index">
+            <td>
+                {{i.name}}
+            </td>
+            <td>
+                {{i.company}}
+            </td>
+            <td>
+                {{i.location}}
+            </td>
+            <!--apply button-->
+            <td>
+                <button ng-if="ctrl.myArray[$index].applied==0" ng-click="ctrl.apply($index)"> apply </button>
+                <p ng-if="ctrl.myArray[$index].applied==1"> applied </p>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</div>
